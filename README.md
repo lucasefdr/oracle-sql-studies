@@ -1,4 +1,4 @@
-# Oracle PL/SQL Studies Repository
+# Oracle SQL & PL/SQL Studies Repository
 
 <p align="left">
   <img src="https://raw.githubusercontent.com/lucasefdr/Oracle-PLSQL/6d8f0bfbc2a01ef13ef084cf294d6a9dbc5b6b62/Assets/oracle.svg" alt="drawing" width="100"/>
