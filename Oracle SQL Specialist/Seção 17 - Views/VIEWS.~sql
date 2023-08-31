@@ -1,0 +1,29 @@
+-- VIEWS
+CREATE OR REPLACE VIEW vw_employeesdpt60
+AS SELECT e.employee_id, e.first_name, e.last_name, e.department_id, e.salary
+FROM employees e
+WHERE e.department_id = 60;
+
+SELECT * FROM vw_employeesdpt60;
+
+-- VIEW COMPLEXA
+CREATE OR REPLACE VIEW vw_departments_total 
+(department_id, department_name, minsal, maxsal, avgsal)
+AS SELECT d.department_id, d.department_name, 
+MAX(e.salary), MIN(e.salary), ROUND(AVG(e.salary), 0)
+FROM employees e, departments d
+WHERE e.department_id = d.department_id
+GROUP BY d.department_id, d.department_name
+ORDER BY d.department_id;
+
+SELECT * FROM vw_departments_total;
+
+-- VIEW com CHECK OPTION
+-- VIEWS
+CREATE OR REPLACE VIEW vw_employeesdpt100
+AS SELECT e.employee_id, e.first_name, e.last_name, e.department_id, e.salary
+FROM employees e
+WHERE e.department_id = 100
+WITH CHECK OPTION CONSTRAINT vw_employeesdpt100_ck;
+
+SELECT * FROM vw_employeesdpt60;

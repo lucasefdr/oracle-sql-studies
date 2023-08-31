@@ -1,0 +1,24 @@
+-- SEQUENCES
+SELECT MAX(employee_id)
+FROM employees;
+
+DROP SEQUENCE employees_seq;
+
+CREATE SEQUENCE employees_seq
+START WITH 208
+INCREMENT BY 1
+NOMAXVALUE
+NOCACHE
+NOCYCLE;
+
+-- Consultando a SEQUENCE
+SELECT * 
+FROM user_objects u
+WHERE u.object_type LIKE '%SEQUENCE%';
+
+SELECT * 
+FROM user_sequences;
+
+ALTER SEQUENCE employees_seq
+MAX VALUE 999999
+CACHE 30;
